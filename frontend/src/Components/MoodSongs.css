@@ -1,0 +1,170 @@
+.mood-songs {
+    width: 100%;
+    padding: 2rem;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+.mood-songs h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.mood-songs .song {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.mood-songs .song:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
+}
+
+.mood-songs .song.active {
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.mood-songs .song .title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.mood-songs .song .title p {
+    margin: 0.2rem 0 0 0;
+    opacity: 0.8;
+}
+
+.mood-songs .song .play-pause-button button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.mood-songs .song .play-pause-button button:hover {
+    transform: scale(1.2);
+}
+
+.audio-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+
+.audio-controls .current-song-info {
+    flex: 1;
+}
+
+.audio-controls .current-song-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.audio-controls .current-song-info p {
+    margin: 0.2rem 0 0 0;
+    opacity: 0.8;
+}
+
+.audio-controls .controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.audio-controls .controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.audio-controls .controls button:hover {
+    transform: scale(1.1);
+}
+
+.progress-bar {
+    flex: 2;
+    margin: 0 2rem;
+    -webkit-appearance: none;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    outline: none;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.volume-control input {
+    width: 100px;
+    -webkit-appearance: none;
+    height: 4px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    outline: none;
+}
+
+.volume-control input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mood-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(48, 166, 95, 0.9);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
