@@ -2,6 +2,7 @@ const express = require("express")
 
 const songRoutes = require("./routes/song.route")
 const cors = require("cors")
+const ConnectDB = require("./db/db")
 
 const app = express()
 
@@ -14,7 +15,7 @@ const app = express()
   origin: `${process.env.FRONTEND_URL}`,
  
 }))
-
+     ConnectDB();
     app.use('/', songRoutes);
     
 
