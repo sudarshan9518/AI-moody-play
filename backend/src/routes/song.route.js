@@ -29,20 +29,32 @@ router.post("/songs", upload.single("audio"),  async(req, res)=>{
 })
 
 
-router.get("/songs",  async (req, res)=>{
+router.get("/songs", async (req, res) => {
+  try {
+    const { mood } = req.query;
 
-    const {mood} = req.query;
+    if (!mood) {
+      return res.status(400).json({
+        message: "Mood is required"
+      });
+    }
 
-    const song = await songModel.find({
-        mood : mood
-    })
+    const songs = await songModel.find({ mood });
 
     res.status(200).json({
-        message : " successfully fetched data",
-        song
-    })
+      message: "Successfully fetched data",
+      songs
+    });
 
-})
+  } catch (error) {
+    console.error("Songs Route Error:", error);
+
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+});
+
   
  
 
