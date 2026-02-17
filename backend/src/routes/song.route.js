@@ -38,7 +38,7 @@ router.get("/songs", async (req, res) => {
         message: "Mood is required"
       });
     }
-
+    await connectDB();
     const songs = await songModel.find({ mood });
 
     res.status(200).json({
