@@ -151,18 +151,6 @@
     cursor: pointer;
 }
 
-.mood-display {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(48, 166, 95, 0.9);
-    color: #333;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    animation: fadeIn 0.5s ease;
-}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }

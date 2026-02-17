@@ -43,7 +43,7 @@ export default function FacialExpression( {setSongs, setCurrentMood}) {
             }
         }
       //http://localhost:3000/songs?mood=happy
-       axios.get(`http://localhost:3000/songs?mood=${_expression}`).then((response)=>{
+       axios.get(`${import.meta.env.VITE_BACKEND_URL}/songs?mood=${_expression}`).then((response)=>{
              console.log(_expression);
              setmode(_expression)
         

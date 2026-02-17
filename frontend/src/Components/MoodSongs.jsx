@@ -122,11 +122,7 @@ const MoodSongs = ({Songs, currentMood}) => {
                 </div>
             )}
 
-            {currentSongIndex !== null && isPlaying && currentMood && (
-                <div className='mood-display'>
-                    Current Mood: {currentMood}
-                </div>
-            )}
+          
 
             {currentSongIndex !== null && (
                 <audio
